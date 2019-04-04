@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CFDD39F9980E528405F1EFD /* Pods_ObjectRecognizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58CEFB4F387E2553FDE94064 /* Pods_ObjectRecognizer.framework */; };
+		A10F98792256BAFF002896BA /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10F98782256BAFF002896BA /* Key.swift */; };
 		A177D03B2239DF8C000C2827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177D03A2239DF8C000C2827 /* AppDelegate.swift */; };
 		A177D03D2239DF8C000C2827 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177D03C2239DF8C000C2827 /* ViewController.swift */; };
 		A177D0402239DF8C000C2827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A177D03E2239DF8C000C2827 /* Main.storyboard */; };
 		A177D0432239DF8C000C2827 /* ObjectRecognizer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A177D0412239DF8C000C2827 /* ObjectRecognizer.xcdatamodeld */; };
 		A177D0452239DF8E000C2827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A177D0442239DF8E000C2827 /* Assets.xcassets */; };
 		A177D0482239DF8E000C2827 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A177D0462239DF8E000C2827 /* LaunchScreen.storyboard */; };
+		A177D0502239EA1B000C2827 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177D04F2239EA1B000C2827 /* ResultsViewController.swift */; };
+		A177D0522239EDB4000C2827 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177D0512239EDB4000C2827 /* CameraHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DBFAD78B8CCDF5A22F73769 /* Pods-ObjectRecognizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectRecognizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjectRecognizer/Pods-ObjectRecognizer.debug.xcconfig"; sourceTree = "<group>"; };
+		58CEFB4F387E2553FDE94064 /* Pods_ObjectRecognizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjectRecognizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D58004F8BD0FE6BF6F3A1E8 /* Pods-ObjectRecognizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectRecognizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjectRecognizer/Pods-ObjectRecognizer.release.xcconfig"; sourceTree = "<group>"; };
+		A10F98782256BAFF002896BA /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		A11564FB223DF54000A6E387 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		A177D0372239DF8C000C2827 /* ObjectRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A177D03A2239DF8C000C2827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A177D03C2239DF8C000C2827 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +33,8 @@
 		A177D0442239DF8E000C2827 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A177D0472239DF8E000C2827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A177D0492239DF8E000C2827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A177D04F2239EA1B000C2827 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		A177D0512239EDB4000C2827 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +42,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CFDD39F9980E528405F1EFD /* Pods_ObjectRecognizer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B1AFD2691AA5416031D4EBD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0DBFAD78B8CCDF5A22F73769 /* Pods-ObjectRecognizer.debug.xcconfig */,
+				6D58004F8BD0FE6BF6F3A1E8 /* Pods-ObjectRecognizer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A11564FA223DF54000A6E387 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A11564FB223DF54000A6E387 /* AssetsLibrary.framework */,
+				58CEFB4F387E2553FDE94064 /* Pods_ObjectRecognizer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A177D02E2239DF8C000C2827 = {
 			isa = PBXGroup;
 			children = (
 				A177D0392239DF8C000C2827 /* ObjectRecognizer */,
 				A177D0382239DF8C000C2827 /* Products */,
+				A11564FA223DF54000A6E387 /* Frameworks */,
+				1B1AFD2691AA5416031D4EBD /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,12 +89,15 @@
 			isa = PBXGroup;
 			children = (
 				A177D03A2239DF8C000C2827 /* AppDelegate.swift */,
+				A177D0512239EDB4000C2827 /* CameraHandler.swift */,
 				A177D03C2239DF8C000C2827 /* ViewController.swift */,
+				A177D04F2239EA1B000C2827 /* ResultsViewController.swift */,
 				A177D03E2239DF8C000C2827 /* Main.storyboard */,
 				A177D0442239DF8E000C2827 /* Assets.xcassets */,
 				A177D0462239DF8E000C2827 /* LaunchScreen.storyboard */,
 				A177D0492239DF8E000C2827 /* Info.plist */,
 				A177D0412239DF8C000C2827 /* ObjectRecognizer.xcdatamodeld */,
+				A10F98782256BAFF002896BA /* Key.swift */,
 			);
 			path = ObjectRecognizer;
 			sourceTree = "<group>";
@@ -74,9 +109,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A177D04C2239DF8E000C2827 /* Build configuration list for PBXNativeTarget "ObjectRecognizer" */;
 			buildPhases = (
+				0D9DCBF5CECCF043FFD38175 /* [CP] Check Pods Manifest.lock */,
 				A177D0332239DF8C000C2827 /* Sources */,
 				A177D0342239DF8C000C2827 /* Frameworks */,
 				A177D0352239DF8C000C2827 /* Resources */,
+				DC415E4F025205919592D2C4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -99,6 +136,7 @@
 				TargetAttributes = {
 					A177D0362239DF8C000C2827 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -133,14 +171,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D9DCBF5CECCF043FFD38175 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ObjectRecognizer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC415E4F025205919592D2C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ObjectRecognizer/Pods-ObjectRecognizer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ObjectRecognizer/Pods-ObjectRecognizer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A177D0332239DF8C000C2827 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A177D03D2239DF8C000C2827 /* ViewController.swift in Sources */,
+				A177D0522239EDB4000C2827 /* CameraHandler.swift in Sources */,
 				A177D03B2239DF8C000C2827 /* AppDelegate.swift in Sources */,
 				A177D0432239DF8C000C2827 /* ObjectRecognizer.xcdatamodeld in Sources */,
+				A177D0502239EA1B000C2827 /* ResultsViewController.swift in Sources */,
+				A10F98792256BAFF002896BA /* Key.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,8 +372,10 @@
 		};
 		A177D04D2239DF8E000C2827 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DBFAD78B8CCDF5A22F73769 /* Pods-ObjectRecognizer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 473KF7RKZN;
 				INFOPLIST_FILE = ObjectRecognizer/Info.plist;
@@ -293,17 +383,20 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = awu.ObjectRecognizer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.awu.ObjectRecognizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		A177D04E2239DF8E000C2827 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D58004F8BD0FE6BF6F3A1E8 /* Pods-ObjectRecognizer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 473KF7RKZN;
 				INFOPLIST_FILE = ObjectRecognizer/Info.plist;
@@ -311,9 +404,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = awu.ObjectRecognizer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.awu.ObjectRecognizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
