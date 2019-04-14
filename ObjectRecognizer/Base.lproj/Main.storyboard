@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nZ7-6F-8xl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nZ7-6F-8xl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,9 +43,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="YVr-qn-lRJ"/>
-                    <connections>
-                        <segue destination="ouH-Aq-lzr" kind="show" identifier="result" id="dCQ-Yq-6vb"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,13 +57,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vyc-gv-RBl">
-                                <rect key="frame" x="0.0" y="64" width="375" height="254"/>
+                                <rect key="frame" x="0.0" y="71" width="375" height="254"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Vyc-gv-RBl" secondAttribute="height" multiplier="375:254" id="1xT-Ny-DNI"/>
                                 </constraints>
                             </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zpF-Ul-gae">
+                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Results" id="J2s-gu-7n1">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="SEW-In-eqZ">
+                                            <connections>
+                                                <action selector="backBtn:" destination="ouH-Aq-lzr" id="5fY-hA-QEE"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="l2X-Yc-khf">
-                                <rect key="frame" x="0.0" y="326" width="375" height="331"/>
+                                <rect key="frame" x="0.0" y="333" width="375" height="334"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -75,11 +84,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Vyc-gv-RBl" firstAttribute="top" secondItem="zpF-Ul-gae" secondAttribute="bottom" constant="5" id="0oP-Xq-dtW"/>
                             <constraint firstItem="Vyc-gv-RBl" firstAttribute="leading" secondItem="xBk-ak-R5S" secondAttribute="leading" id="56C-Kz-bjQ"/>
+                            <constraint firstItem="zpF-Ul-gae" firstAttribute="leading" secondItem="xBk-ak-R5S" secondAttribute="leading" id="6fy-Ev-4dP"/>
+                            <constraint firstItem="zpF-Ul-gae" firstAttribute="top" secondItem="xBk-ak-R5S" secondAttribute="top" constant="2" id="88E-PM-jg3"/>
                             <constraint firstItem="l2X-Yc-khf" firstAttribute="trailing" secondItem="xBk-ak-R5S" secondAttribute="trailing" id="9gK-oe-ZAQ"/>
-                            <constraint firstItem="xBk-ak-R5S" firstAttribute="bottom" secondItem="l2X-Yc-khf" secondAttribute="bottom" constant="10" id="EjS-l2-ZTF"/>
-                            <constraint firstItem="Vyc-gv-RBl" firstAttribute="top" secondItem="xBk-ak-R5S" secondAttribute="top" id="N5b-ms-We9"/>
+                            <constraint firstItem="xBk-ak-R5S" firstAttribute="bottom" secondItem="l2X-Yc-khf" secondAttribute="bottom" id="EjS-l2-ZTF"/>
                             <constraint firstItem="Vyc-gv-RBl" firstAttribute="trailing" secondItem="xBk-ak-R5S" secondAttribute="trailing" id="Ymc-o0-4pe"/>
+                            <constraint firstItem="zpF-Ul-gae" firstAttribute="trailing" secondItem="xBk-ak-R5S" secondAttribute="trailing" id="bfw-MY-xV0"/>
                             <constraint firstItem="l2X-Yc-khf" firstAttribute="leading" secondItem="xBk-ak-R5S" secondAttribute="leading" id="cEH-7x-O2L"/>
                             <constraint firstItem="l2X-Yc-khf" firstAttribute="top" secondItem="Vyc-gv-RBl" secondAttribute="bottom" constant="8" id="frO-bY-NZ6"/>
                         </constraints>

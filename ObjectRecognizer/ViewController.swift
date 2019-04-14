@@ -8,12 +8,13 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController {
     
     var img: UIImage?
     var imgPath: URL?
-    var data: String?
+    var data: JSON?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,28 +58,27 @@ class ViewController: UIViewController {
         self.showActionSheet(vc: self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "result" {
-            let resultVC = segue.destination as! ResultsViewController
-            if let image = self.img {
-                resultVC.img = image
-                resultVC.returnedData = data
-            }
+    func presentResults() {
+        let resultVC = self.storyboard?.instantiateViewController(withIdentifier: "resultsVC") as! ResultsViewController
+        if let image = self.img {
+            resultVC.img = image
+            resultVC.json = data
         }
+        
+        self.present(resultVC, animated: true, completion: nil)
     }
     
     func uploadImg() {
-        let imgPathString: String = self.imgPath!.absoluteString
         let headers = Key.init().configKey
-        let parameters = ["image":imgPathString]
-        let url = "https://microsoft-azure-microsoft-computer-vision-v1.p.rapidapi.com/analyze?visualfeatures=Categories%2CTags%2CColor%2CFaces%2CDescription"
-        
+        print("HEADER: \(headers)")
         guard let imgData = self.img?.jpegData(compressionQuality:0.2) else { return }
+        let parameters = ["image":imgData]
+        let url = "https://microsoft-azure-microsoft-computer-vision-v1.p.rapidapi.com/analyze?visualfeatures=Categories%2CTags%2CColor%2CFaces%2CDescription"
         
         Alamofire.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(imgData, withName: "fileset",fileName: "file.jpg", mimeType: "image/jpg")
             for (key, value) in parameters {
-                multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
             } //Optional for extra parameters
         },
                          to:url, headers: headers)
@@ -92,6 +92,9 @@ class ViewController: UIViewController {
                 
                 upload.responseJSON { response in
                     print(response.result.value!)
+                    let json = try? JSON(data: response.data!)
+                    self.data = json!
+                    self.presentResults()
                 }
                 
             case .failure(let encodingError):
@@ -108,11 +111,9 @@ class ViewController: UIViewController {
             present(ac, animated: true)
             print("Error saving photo!")
         } else {
-            
             let ac = UIAlertController(title: "Save Successfully!", message: "Your image was saved successfully", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(ac, animated: true)
-            
             print(contextInfo)
         }
     }

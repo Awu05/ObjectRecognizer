@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ResultsViewController: UIViewController {
     
@@ -15,14 +17,61 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     
     var img: UIImage?
-    var returnedData: String?
+    var json: JSON?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
         self.imgView.image = img
-        self.textView.text = returnedData
+        self.parseJSONData()
     }
     
+    func parseJSONData() {
+        let category = getCategory(categories: json!["categories"])
+        let tags = getTags(tags: json!["tags"])
+        let caption = getCaption(captions: json!["description"]["captions"])
+        self.textView.text = caption + category + tags
+    }
+    
+    func getCategory(categories: JSON) -> String {
+        var categoryStr = ""
+        var i = 1
+        for category in categories.arrayValue {
+            categoryStr += "Category \(i): \(category["name"].stringValue)\nScore: \(category["score"].stringValue)\n"
+            i += 1
+        }
+        
+        categoryStr += "\n"
+        return categoryStr
+    }
+    
+    func getTags(tags: JSON) -> String {
+        var tagStr = ""
+        var i = 1
+        for tag in tags.arrayValue {
+            tagStr += "Tag \(i): \(tag["name"].stringValue)\nConfidence: \(tag["confidence"].stringValue)\n"
+            i += 1
+        }
+        
+        tagStr += "\n"
+        return tagStr
+    }
+    
+    func getCaption(captions: JSON) -> String {
+        var captionStr = ""
+        var i = 1
+        for caption in captions.arrayValue {
+            captionStr += "Caption \(i): \(caption["text"].stringValue)\nConfidence: \(caption["confidence"].stringValue)\n"
+            i += 1
+        }
+        
+        captionStr += "\n"
+        return captionStr
+    }
+    
+    @IBAction func backBtn(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 

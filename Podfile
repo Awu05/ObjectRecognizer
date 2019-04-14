@@ -7,5 +7,7 @@ target 'ObjectRecognizer' do
 
   # Pods for ObjectRecognizer
   pod 'Alamofire', '~> 4.0'
+  pod 'SwiftyJSON', '~> 4.0'
+
 
 end
