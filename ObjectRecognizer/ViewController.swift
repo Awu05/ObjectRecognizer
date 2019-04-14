@@ -55,7 +55,14 @@ class ViewController: UIViewController {
     }
 
     @IBAction func takePicBtn(_ sender: Any) {
-        self.showActionSheet(vc: self)
+        if Reachability.isConnectedToNetwork() {
+            self.showActionSheet(vc: self)
+        } else {
+            let alertVC = UIAlertController(title: "No network/wifi connection", message: "Sorry, this device has no internet connection.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertVC.addAction(okAction)
+            self.present(alertVC, animated: true, completion: nil)
+        }
     }
     
     func presentResults() {

@@ -16,6 +16,7 @@
 		A177D0452239DF8E000C2827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A177D0442239DF8E000C2827 /* Assets.xcassets */; };
 		A177D0482239DF8E000C2827 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A177D0462239DF8E000C2827 /* LaunchScreen.storyboard */; };
 		A177D0502239EA1B000C2827 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A177D04F2239EA1B000C2827 /* ResultsViewController.swift */; };
+		A1A6911E2263C50E006531DE /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A6911D2263C50E006531DE /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		A177D0472239DF8E000C2827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A177D0492239DF8E000C2827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A177D04F2239EA1B000C2827 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		A1A6911D2263C50E006531DE /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				A177D03A2239DF8C000C2827 /* AppDelegate.swift */,
+				A1A6911D2263C50E006531DE /* Reachability.swift */,
 				A177D03C2239DF8C000C2827 /* ViewController.swift */,
 				A177D04F2239EA1B000C2827 /* ResultsViewController.swift */,
 				A177D03E2239DF8C000C2827 /* Main.storyboard */,
@@ -224,6 +227,7 @@
 			files = (
 				A177D03D2239DF8C000C2827 /* ViewController.swift in Sources */,
 				A177D03B2239DF8C000C2827 /* AppDelegate.swift in Sources */,
+				A1A6911E2263C50E006531DE /* Reachability.swift in Sources */,
 				A177D0432239DF8C000C2827 /* ObjectRecognizer.xcdatamodeld in Sources */,
 				A177D0502239EA1B000C2827 /* ResultsViewController.swift in Sources */,
 				A10F98792256BAFF002896BA /* Key.swift in Sources */,
