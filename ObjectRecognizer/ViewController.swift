@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var img: UIImage?
     var imgPath: URL?
     var data: JSON?
+    var isHotdogPressed: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,8 +55,21 @@ class ViewController: UIViewController {
         self.present(actionSheet, animated: true, completion: nil)
     }
 
+    @IBAction func hotdogBtn(_ sender: Any) {
+        if Reachability.isConnectedToNetwork() {
+            self.isHotdogPressed = true
+            self.showActionSheet(vc: self)
+        } else {
+            let alertVC = UIAlertController(title: "No network/wifi connection", message: "Sorry, this device has no internet connection.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertVC.addAction(okAction)
+            self.present(alertVC, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func takePicBtn(_ sender: Any) {
         if Reachability.isConnectedToNetwork() {
+            self.isHotdogPressed = false
             self.showActionSheet(vc: self)
         } else {
             let alertVC = UIAlertController(title: "No network/wifi connection", message: "Sorry, this device has no internet connection.", preferredStyle: .alert)
@@ -70,6 +84,7 @@ class ViewController: UIViewController {
         if let image = self.img {
             resultVC.img = image
             resultVC.json = data
+            resultVC.isHotdogPressed = self.isHotdogPressed
         }
         
         self.present(resultVC, animated: true, completion: nil)

@@ -18,6 +18,7 @@ class ResultsViewController: UIViewController {
     
     var img: UIImage?
     var json: JSON?
+    var isHotdogPressed: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +28,15 @@ class ResultsViewController: UIViewController {
     }
     
     func parseJSONData() {
-        let category = getCategory(categories: json!["categories"])
-        let tags = getTags(tags: json!["tags"])
-        let caption = getCaption(captions: json!["description"]["captions"])
-        self.textView.text = caption + category + tags
+        if self.isHotdogPressed! {
+            let tags = getTags(tags: json!["tags"])
+            self.textView.text = tags
+        } else {
+            let category = getCategory(categories: json!["categories"])
+            let tags = getTags(tags: json!["tags"])
+            let caption = getCaption(captions: json!["description"]["captions"])
+            self.textView.text = caption + category + tags
+        }
     }
     
     func getCategory(categories: JSON) -> String {
@@ -49,8 +55,18 @@ class ResultsViewController: UIViewController {
         var tagStr = ""
         var i = 1
         for tag in tags.arrayValue {
+            if self.isHotdogPressed! {
+                if tag["name"].stringValue.lowercased() == "hotdog" {
+                    return "Hotdog!"
+                }
+            }
+            
             tagStr += "Tag \(i): \(tag["name"].stringValue)\nConfidence: \(tag["confidence"].stringValue)\n"
             i += 1
+        }
+        
+        if self.isHotdogPressed! {
+            return "Not Hotdog"
         }
         
         tagStr += "\n"

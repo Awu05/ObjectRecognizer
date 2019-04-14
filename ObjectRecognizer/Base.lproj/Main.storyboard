@@ -32,11 +32,21 @@
                                     <action selector="takePicBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ijg-Vs-uwC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mU6-1F-Xv5">
+                                <rect key="frame" x="110.5" y="408.5" width="154" height="30"/>
+                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Hotdog or Not Hotdog"/>
+                                <connections>
+                                    <action selector="hotdogBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tFp-se-491"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="R7I-n8-hKy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3RF-Eq-oP5"/>
                             <constraint firstItem="y3U-5Z-RiX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5rL-JL-LHJ"/>
+                            <constraint firstItem="mU6-1F-Xv5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7I6-Nc-gx5"/>
+                            <constraint firstItem="mU6-1F-Xv5" firstAttribute="top" secondItem="y3U-5Z-RiX" secondAttribute="bottom" constant="60" id="OOZ-u9-TBU"/>
                             <constraint firstItem="y3U-5Z-RiX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gkD-bO-Mhk"/>
                             <constraint firstItem="R7I-n8-hKy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sBW-7S-HCs"/>
                         </constraints>
